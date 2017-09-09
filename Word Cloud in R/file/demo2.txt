@@ -1,0 +1,973 @@
+1. Getting Started with R
+     What is R?
+     Why Learn R?
+     Installing R and R Studio
+     Understanding CRAN and installing important packages
+
+2.	Introduction to R Basic
+Development Environment Overview (RStudio)
+Create and execute R Scripts
+Getting help with R and RStudio
+Arithmetic in R
+Variables in R
+Data Type in R
+Vector Basic and operations
+Comparison Operator
+
+3.	Exploring Matrices, Data frames and Lists in R 
+Creating Matrices
+Matrix Operations
+Data frame Basics
+Create Data Frames and Operations
+Add additional columns or rows to Data Frames 
+R Lists
+
+4.	R Programming Basic
+Introduction to R programming 
+Logical Operator
+If, Else and Else if statements
+While Loop in R
+For Loop in R
+Function in R
+5.	Data Input and Output with R
+	 Importing external data (CSV, Text etc.)
+ Exporting data to files
+ Filtering / sub setting data
+ Sorting data
+	 Data Manipulation & data wrangling
+	 Understanding different charts & finding insights
+
+6.	Data Visualization in R
+Overview of ggplot2
+Histograms
+Scatterplots
+Barplots
+Boxplots
+
+1.	Getting Started with R 
+
+What is R?
+Creators: Ross Ihaka and Robert Gentleman
+Release Year: 1995
+Stable Release: 3.4.0 (You Stupid Darkness), April 21, 2017
+R is an Open Source language and environment for statistical computing and visualization. R is an implementation of S programming language (Bell Labs). R’s software environment was written primarily in C, Fortran and R.  R provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering etc.) and graphical techniques, and is highly extensible.
+R is an integrated suite of software facilities for data manipulation, calculation and visualization. It includes:
+•	An effective data handling and storage facility,
+•	A suite of operators for calculations on arrays, in particular matrices,
+•	A large, coherent, integrated collection of intermediate tools for data analysis,
+•	Graphical facilities for data analysis and display either on-screen or on hardcopy, and
+•	A well-developed, simple and effective programming language which includes conditionals, loops, user-defined recursive functions and input and output facilities.
+
+The capabilities of R are extended through user-created packages, which allow specialized statistical techniques, graphical devices (such as the ggplot2 ), import/export capabilities, reporting tools (knitr, Sweave) etc. A core set of packages is included with the installation of R, with more than 10498 additional packages available at the Comprehensive R Archive Network (CRAN). 
+The most-commonly used graphical integrated development environment for R is R Studio.
+
+Why Learn R?
+Learning the “skills of data science” is easiest in R
+
+O’Reilly Media conducted a survey in 2014 to understand the tools that data scientists are currently using. They found that R is the most popular programming language used by 70% of data miners. R's functionality is developed with statisticians in mind, thereby giving it field-specific advantages such as great features for data visualization. 
+Reason to choose R:
+?	R focuses on better, user friendly data analysis, statistics and graphical models.
+?	Huge community with support coming in the form of:
+o	Mailing lists
+o	User-contributed documentation
+o	Active Stackoverflow members
+?	More adoption from researchers, data scientists, statisticians.
+?	Statistical models can be written with only a few lines.
+?	The same piece of functionality can be written in several ways in R.
+?	It is easy to use complex formulas in R. All kind of statistical tests and models are readily available and easily used.
+?	Easy to learn.
+
+Installing R and R Studio
+A powerful and productive user interface for R. It's free and open source, and works great on Windows, Mac, and Linux.
+
+For Windows:
+Open Browser and go to the link https://www.rstudio.com/  and download the latest version of R.
+
+For Linux:
+•	Go to R Studio Downloads website (https://www.rstudio.com/)
+•	Choose and download the right package for your system
+•	Open this file in Ubuntu Software Center
+•	Click install and you’re done
+OR
+     Type the following in command line.
+sudo apt-get install r-base r-base-dev
+
+Understanding CRAN and installing packages
+
+Comprehensive R Archive Network (CRAN) is a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R. Currently, the CRAN package repository features 10498 available packages ( https://cran.r-project.org/index.html ).
+
+To Install package via console, type the following in console:
+?	install.packages (“data.table”)
+
+To include the package in current Session type following:
+?	library (“data.table”)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.	Introduction to R Basic
+
+Development Environment Overview (RStudio)
+
+RStudio is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management. Studio is available in open source and commercial editions and runs on the desktop (Windows, Mac, and Linux) or in a browser connected to RStudio Server or RStudio Server Pro (Debian/Ubuntu, RedHat/CentOS, and SUSE Linux).
+
+
+ 
+
+Create and execute R Scripts
+To create a simple script in R, open the RStudio then go to the file and select new file as R Script.
+
+#Set the Working Directory
+	setwd("E:/R_Program")
+
+#Write the code in to the file
+	print("hello world") 
+	print(“Welcome to R for Data Science”)
+
+#Save the file e.g. myfirstscript.R
+#To run the script
+	source('myfirstscript.R')
+
+ 
+
+
+Getting help with R
+
+R includes extensive facilities for accessing documentation and searching for help. There are also specialized search engines for accessing information about R on the internet, and general internet search engines can also prove useful.
+
+Use help() and ? in R
+The help() function and ? help operator in R provide access to the documentation pages for R functions, data sets, and other objects, both for packages in the standard R distribution and for contributed packages. To access documentation for the vector, for example, enter the command help(vector) or help("vector"), or ?vector or ?"vector" (i.e., the quotes are optional).
+CRAN Task Views
+CRAN Task Views are documents that summarize R resources on CRAN in particular areas of application, helping you to navigate the maze of thousands of CRAN packages. A list of available Task Views may be found on CRAN.
+Stack Overflow
+Stack Overflow is a well-organized and formatted site for help and discussions about programming. It has excellent search ability. Topics are tagged, and “r” is a very popular tag on the site with almost 150,000 questions (as of summer 2016). To go directly to R-related topics, visit http://stackoverflow.com/questions/tagged/r. 
+
+Arithmetic in R
+
+# Addition
+> 2 + 2
+# Subtraction
+> 4 - 3
+# Division
+	> 8 / 2
+# Multiplication
+	> 4 * 5
+# Exponential
+ 	> 2^2
+# Modulo
+	> 5 %% 2
+# order
+	> 100 * 2 + 50/2 = 225
+
+Variables in R
+In R, you can create a variable using <- or = sign. Let’s say we want to create a variable x to compute the sum of 7 and 8. We will write it as:
+> X <- 7 + 8     # Result will be stored in X
+> X     # Print the value stored in X 
+> 15     # Result
+Once we create a variable, we no longer get the output directly (like calculator), unless we call the variable in the next line. Remember, variables can be alphabets, alphanumeric but not numeric. We can’t create numeric variables.
+
+Data Type in R
+
+Everything we see or create in R is an object. A vector, matrix, data frame, even a variable is an object. 
+
+Basic Data Types are:
+1.	Numeric
+> X <- 2.2
+2.	Character or String
+> X <- “hello”
+3.	Logical
+> X <- TRUE
+
+Vector Basic and operations
+
+Vector is a one dimensional array that can holds character, numeric or logical data elements. We create a vector by combine function using letter C and parenthesis. A vector contains object of same class. When objects of different classes are mixed in a list, coercion occurs. This effect causes the objects of different types to ‘convert’ into one class.
+    
+    	# Vector of Numeric
+	> nvec <- c(23,45,54,23,65,76,46)
+	> [1] 23 45 54 23 65 76 46        #Output
+
+	# Vector of Character
+	> cvec <- c(“Sunday”, “Monday”, “Tuesday”)
+	> [1]  “Sunday”  “Monday”  “Tuesday”        #Output
+	
+	#Vector of Logical
+	>  lvec <- c(T, F, T)
+	> [1]  TRUE    FALSE   TRUE       #Output
+	
+	Vector Name:
+> temps <- c(72,71,68,73,69,75,71)
+> temps
+> [1]  72  71  68  73  69  75  71      #Output
+> names(temps) <- c('Mon','Tue','Wed','Thu','Fri','Sat','Sun')
+> temps
+ 	Mon Tue Wed Thu Fri Sat Sun 
+ 	 72  71  68  73  69  75  71
+
+Working with Vector
+We can perform basics arithmetic with vectors and operations will occur on an element by element basis, for example:
+	
+	> v1 <- c(1,2,3)
+	> v2 <- c(5,6,7)
+
+Adding Vectors:
+
+	> v1 + v2
+      > [1] 6  8 10     #Output
+
+Subtracting a Vectors:
+
+	> v1 – v2
+	> [1]  -4   -4   -4          #Output
+
+Multiplying Vectors:
+
+	> v1 * v2
+	> [1]  5   12   21          #Output
+
+Dividing of Vector:
+
+	> v1/v2  
+      > [1] 0.2000000 0.3333333 0.4285714   #Output
+
+Function with vector:
+	>sum(v1)
+      > [1] 6
+      >max(v1)
+      > [1] 3
+
+ Vector Indexing
+
+	> v1[2]
+	> [1]   2             #Output
+
+Vector Slicing
+
+	> v1 [c(1,2)]
+           > [1] 1 2    #Output
+
+	> v3 <- c(1,2,3,4,5,6,7,8,9,10)
+	> v3[2:4]
+	> [1]  2 3 4      #Output
+
+
+Comparison Operator
+	
+	Greater Than
+	> 5 > 6
+	> [1]    FALSE          #Output
+
+
+ We can also do element by element comparisons for two vectors:
+	> v1 <- c(1,2,3)
+	> v2 <- c(10,20,30)
+	> v1 < v2
+	>[1]  TRUE   TRUE  TRUE  #Output
+
+Greater Than or Equal to
+	> 6 >= 6
+	> [1] TRUE  #Output
+
+
+3.	Exploring Matrices, Data frames and Lists in R 
+Creating Matrices
+
+A matrix will allow us to have a 2-dimensional data structure which contains elements consisting of the same data type.
+Before we talk about the Matrix, we should show a quick tip for quickly creating sequential numeric vectors, we can use the colon notation from slicing to create sequential vectors:
+
+	> v <- 1:10
+	> v
+             > [1]  1  2  3  4  5  6  7  8  9 10      #Output
+
+Now, to create a matrix in R, we can use the matrix () function. We can pass in a vector into the matrix:
+
+> matrix(v)
+> [,1]
+ [1,]    1
+ [2,]    2
+ [3,]    3
+ [4,]    4
+ [5,]    5		#Output
+ [6,]    6
+ [7,]    7
+ [8,]    8
+ [9,]    9
+ [10,]   10
+
+Here we have a two-dimensional matrix which is 10 rows by 1 column. Now what if we want to specify the number of rows? We can pass the parameter/argument into the matrix function called nrow which stands for number of rows:
+
+	> matrix(v,nrow=2)
+	> 	[,1] [,2] [,3] [,4] [,5]
+	[1,]    1    3    5    7    9		#Output
+	[2,]    2    4    6    8   10
+
+Now we have a 2 by 5 matrix. Notice that the nrow argument allows this to happen. But how do we decide the fill order? We could have filed columns first (as we did above) or filled out the rows first insequential order. The byrow argument allows you to specify whether or not you want to fill out the matrix by rows or by columns. For example:
+
+	> matrix(1:12,byrow = FALSE,nrow=4)
+	> 	      [,1] [,2] [,3]
+		[1,]    1    5    9
+		[2,]    2    6   10		#Output
+		[3,]    3    7   11
+		[4,]    4    8   12
+
+	
+
+
+
+	>  matrix(1:12, byrow=TRUE, nrow=4)
+	> 		[,1] [,2] [,3]
+		[1,]    1    2    3
+		[2,]    4    5    6
+		[3,]    7    8    9
+		[4,]   10   11   12
+
+We can combine vectors to later input them into a matrix. For example imagine the following vectors below of stock prices:
+
+> goog <- c(450,451,452,445,468)
+> msft <- c(230,231,232,236,228)
+	> stocks <- c(goog,msft)
+	> stock.matrix <- matrix(stocks,byrow=TRUE,nrow=2)
+	> stock.matrix
+	>    [,1] [,2] [,3] [,4] [,5]
+	[1,]  450  451  452  445  468		#Output
+	[2,]  230  231  232  236  228
+
+     Naming Matrix
+	
+	Now that we have our matrix, it would be nice to name the rows and columns for reference. We can do this similarly to the names() function for vectors, but in this case we define colnames() and rownames(). So let's name our stock matrix:
+
+	> days <- c('Mon','Tue','Wed','Thu','Fri')
+	> st.names <- c('GOOG','MSFT')
+	> colnames(stock.matrix) <- days
+	> rownames(stock.matrix) <- st.names
+	> stock.matrix
+	Mon Tue Wed Thu Fri
+GOOG 450 451 452 445 468		#Output
+MSFT 230 231 232 236 228
+
+
+Matrix Operations
+    
+Matrix arithmetic:
+	    #Addition:
+	> mat <- matrix(1:25, byrow = T, nrow = 5)
+> mat + mat
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    2    4    6    8   10
+[2,]   12   14   16   18   20
+[3,]   22   24   26   28   30
+[4,]   32   34   36   38   40
+[5,]   42   44   46   48   50
+	#Multiplication
+	     > 2 *  mat
+	[,1] [,2] [,3] [,4] [,5]
+[1,]    2    4    6    8   10
+[2,]   12   14   16   18   20
+[3,]   22   24   26   28   30		#Output
+[4,]   32   34   36   38   40
+[5,]   42   44   46   48   50
+
+
+
+#Division
+      > mat / 2
+	     [,1] [,2] [,3] [,4] [,5]
+	[1,]  0.5  1.0  1.5  2.0  2.5
+	[2,]  3.0  3.5  4.0  4.5  5.0     	#Output
+	[3,]  5.5  6.0  6.5  7.0  7.5
+	[4,]  8.0  8.5  9.0  9.5 10.0
+	[5,] 10.5 11.0 11.5 12.0 12.5
+
+We can use multiple matrices with arithmetic as well, for example:
+	
+	> mat + mat
+	      [,1] [,2] [,3] [,4] [,5]
+	[1,]    2    4    6    8   10
+	[2,]   12   14   16   18   20
+	[3,]   22   24   26   28   30		#Output
+	[4,]   32   34   36   38   40
+	[5,]   42   44   46   48   50
+
+
+Comparison Operators
+
+	> mat > 2
+	     [,1]  [,2] [,3] [,4] [,5]
+	[1,] FALSE FALSE TRUE TRUE TRUE
+	[2,]  TRUE  TRUE TRUE TRUE TRUE	#Output
+	[3,]  TRUE  TRUE TRUE TRUE TRUE
+	[4,]  TRUE  TRUE TRUE TRUE TRUE
+	[5,]  TRUE  TRUE TRUE TRUE TRUE
+
+
+	
+	
+
+We can perform functions across the columns and rows:
+
+> colSums(mat)
+[1] 55 60 65 70 75
+
+> rowSums(mat)
+[1]  15  40  65  90 115
+
+
+Data frame Basics
+We've learned about vectors and their two-dimensional counterpart, matrices. Now we will learn about Dataframes, one of the main tools for data analysis with R! Matrix inputs were limited because all the data inside of the matrix had to be of the same data type (numeric, logical, etc.). With Dataframes we will be able to organize and mix data types to create a very powerful data structure tool
+
+R actually has built in DataFrames for quick reference to play around with! Check out the following dataframes that are built-in
+	
+	#Dataframe about states
+	> state.x77
+	#US personal Expenditure
+            > USPersonalExpenditure
+
+To get a list of all available built-in dataframes, use data()
+	> data()
+You'll notice the states dataframe was really big, we can use the head() and tail() functions to view the first and last 6 rows respectively. Let's take a look:
+
+	> head(state.x77)
+	> tail(state.x77)
+
+We can use the str() to get the structure of a dataframe, which gives information on the structure of the dataframe and the data it contains, such as variable names and data types. We can use summary() to get a quick statistical summary of all the columns of a DataFrame, depending on the data, this may or may not be useful.
+
+	> str(state.x77)
+	num [1:50, 1:8] 3615 365 2212 2110 21198 ...
+ 	- attr(*, "dimnames")=List of 2
+  	..$ : chr [1:50] "Alabama" "Alaska" "Arizona" "Arkansas" ...
+  	..$ : chr [1:8] "Population" "Income" "Illiteracy" "Life Exp" ...
+
+	> summery(state.x77)
+
+Creating Data Frames and Operations
+
+We can create data frames using the data.frame() function and pass vectors as arguments, which will then convert the vectors into columns of the data frame. Let's see a simple example:
+Add additional columns or rows to Data Frames.
+ 
+	> # Some made up weather data
+	> days <- c('mon','tue','wed','thu','fri')
+	> temp <- c(22.2,21,23,24.3,25)
+	> rain <- c(TRUE, TRUE, FALSE, FALSE, TRUE)
+	
+	> # Pass in the vectors:
+	> df <- data.frame(days,temp,rain)
+	> df
+  days temp  rain
+1  mon 22.2  TRUE
+2  tue 21.0  TRUE
+3  wed 23.0 FALSE			#Output
+4  thu 24.3 FALSE
+5  fri 25.0  TRUE
+
+Let's revisit our weather data frame and learn how to select elements from within the dataframe using bracket notation:
+We can use the same bracket notation we used for matrices:
+df[rows,columns]
+
+	> df[1,]
+  	  days temp rain
+	1  mon 22.2 TRUE		#Output
+
+
+
+
+
+we can use column names to select data for the columns instead of having to remember numbers. so for example:
+
+	> # All rain values
+	> df[,'rain']
+	[1]  TRUE  TRUE FALSE FALSE  TRUE
+	
+	> # First 5 rows for days and temps
+	> df[1:5,c('days','temp')]
+  	   days temp
+	1  mon 22.2
+	2  tue 21.0
+	3  wed 23.0
+	4  thu 24.3
+	5  fri 25.0
+
+If you want all the values of a particular column you can use the dollar sign directly after the dataframe as follows:
+df.name$column.name
+
+	> df$rain
+	[1]  TRUE  TRUE FALSE FALSE  TRUE
+
+We can use the subset() function to grab a subset of values from our data frame based off some condition. So for example, imagine we wanted to grab the days where it rained (rain=True), we can use the subset() function as follows:
+
+	> subset(df,subset=rain==TRUE)
+  	   days temp rain
+	1  mon 22.2 TRUE
+	2  tue 21.0 TRUE
+	5  fri 25.0 TRUE
+
+We can sort the order of our data frame by using the order function. You pass in the column you want to sort by into the order() function, then you use that vector to select from the dataframe. Let's see an example of sorting by the temperature:
+
+	> sorted.temp <- order(df['temp'])
+	> df[sorted.temp,]
+  	   days temp  rain
+	2  tue 21.0  TRUE
+	1  mon 22.2  TRUE
+	3  wed 23.0 FALSE
+	4  thu 24.3 FALSE
+	5  fri 25.0  TRUE
+
+Importing and Exporting Data Frame
+
+	# Importing from csv file to a dataframe
+	> d2 <- read.csv('some_file.csv')
+
+	# For Excel Files
+	# Load the readxl package
+	> library(readxl)
+	# Call info from the sheets using read.excel
+	> df <- read_excel('Sample.xlsx',sheet='Sheet1')
+
+	
+	
+# Exporting to csv file from a dataframe
+	> d2 <- write.csv('some_file.csv')
+
+Getting Information about Data Frame
+> # Row and columns counts
+> nrow(df)
+[1] 10
+> ncol(df)
+[1] 2
+
+    Referencing Cells
+
+	> vec <- df[[5, 2]] # get cell by [[row,col]] num
+ 
+	> newdf <- df[1:5, 1:2] # get multiplt cells in new df
+
+	> df[[2, 'col.name.1']] <- 99999 # reassign a single cell
+
+R Lists
+
+We've covered Vectors, Matrices, and Data frames, now we will learn about our last basic built-in R data structure: the list.
+Lists will allow us to store a variety of data structures under a single variable. This means we could store a vector, matrix, data frame, etc. under a single list. For example:
+
+	# Create a vector
+>  v <- c(1,2,3,4,5)
+
+# Create a matrix
+> m <- matrix(1:10, nrow=2)
+
+# Create a data frame
+> df <- women
+
+We can use the list() to combine all the data structures:
+
+	> li <- list(v,m,df)
+
+			[[1]]
+[1] 1 2 3 4 5
+
+[[2]]
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    3    5    7    9
+[2,]    2    4    6    8   10
+
+[[3]]
+   height weight
+1      58    115
+2      59    117
+3      60    120
+4      61    123
+5      62    126
+6      63    129
+7      64    132
+8      65    135
+9      66    139
+10     67    142
+11     68    146
+12     69    150
+13     70    154
+14     71    159
+15     72    164
+
+Selecting objects from a list
+You can use bracket notation to show objects in a list, and double brackets to actually grab the objects form the list, for example:
+	   # Single brackets
+> li[1] # By index
+# Use double brackets to actually grab the items
+> li[['sample_vec']]
+
+4.	R Programming Basic
+Logical Operator
+
+Logical Operators will allow us to combine multiple comparison operators. The logical operators we will learn about are:
+AND - &
+OR - |
+NOT - !
+The best way to explain these is to see some examples.
+
+# Imagine the variable x
+> x <- 10
+Now we want to know if 10 is less than 20 AND greater than 5:
+	> x < 20
+Out[2]:TRUE
+
+> x > 5
+Out[3]:TRUE
+
+> x < 20 & x > 5
+Out[4]:TRUE
+We can also add parenthesis for readability and to make sure the order of comparisons is what we expect:
+	> (x < 20) & (x>5)
+Out[5]:TRUE
+NOT !
+You can think about NOT as reversing any logical value in front of it, basically asking, "Is this NOT true?" For example:
+	> (10==1)
+Out[13]:FALSE
+> !(10==1)
+Out[14]:TRUE
+
+
+
+
+
+If, Else and Else if statements
+
+Now it is time to finally start learning how we can program some sort of logic using R! Our first step in this learning journey for programming will be simple if, else, and else if statements.
+Here is the syntax for an if statement in R:
+if (condition){
+    # Execute some code
+}
+
+So what does this actually mean if you've never seen an if statement before? It means that we can begin to apply some simple logic to our code. We say if some condition is true then execute the code inside of the curly brackets.
+For example, let's say we have two variables, hot and temp. Imagine that hot starts off as FALSE and temp is some number in degrees. If the temp is greater than 80 than we want to assign hot==TRUE.
+Let's see this in action:
+
+> hot <- FALSE
+> temp <- 60
+> if (temp > 80){
+    		hot <- TRUE
+    
+}
+> hot
+Out[5]:FALSE
+
+# Reset temp
+> temp <- 100
+
+> if (temp > 80){
+   	    hot <- TRUE
+    
+}
+
+> hot
+TRUE
+
+> if( 1 == 1){        print('hi')}
+	
+	[1] "hi"
+
+
+
+
+
+else
+If we want to execute another block that occurs if the if statement is false, we can use an else statement to do this! It has the syntax:
+> if (condition) {
+  # Code to execute if true
+} else {
+  # Code to execute if above was not true
+}
+
+Notice the alignment of the curly brackets and the use of the else keyword. Let's see it in action!
+> temp <- 30
+
+> if (temp > 90){
+    print("Hot outside!")
+} else{
+    print("Its not too hot today!")
+}
+"Its not too hot today!"
+
+else if
+What if we wanted more options to print out, rather than just two, the if and the else? This is where we can use the else if statement to add multiple condition checks, using else at the end to execute code if none of our conditions match up with and if or else if.
+Let's see this in action!
+> temp <- 30
+
+> if (temp > 80){
+    print("Hot outside!")
+} else if(temp<80 & temp>50){
+    print('Nice outside!')
+} else if(temp <50 & temp > 32){
+    print("Its cooler outside!")
+} else{
+    print("Its really cold outside!")
+}
+[out] "Its really cold outside!"
+
+While Loop in R
+
+while loops are a while to have your program continuously run some block of code until a condition is met (made TRUE). The syntax is:
+while (condition){
+    # Code executed here 
+    # while condition is true
+}
+
+A major concern when working with a while loop is to make sure that at some point the condition should become true, otherwise the while loop will go forever! Remember you can use Crtl-C to kill a process in R Studio!
+Here's a real quick side note on printing variables along with strings:
+
+		> x <- 0
+
+> while(x < 10){
+    
+   		cat('x is currently: ',x)
+    		print(' x is still less than 10, adding 1 to x')
+    
+    		# add one to x
+    		x <- x+1
+}
+
+For Loop in R
+A for loop allows us to iterate over an object (such as a vector) and we can then perform and execute blocks of codes for every loop we go through. The syntax for a for loop is:
+
+for (temporary_variable in object){
+    # Execute some code at every loop
+}
+		> vec <- c(1,2,3,4,5)
+		> for (temp_var in vec){
+    			print(temp_var)
+}
+Nested for loops
+We can nest for loops inside one another, however be careful when doing this, as every additional for loop nested inside another may cause a significant amount of additional time for your code to finish executing. For example:
+> for (row in 1:nrow(mat)){
+    for (col in 1:ncol(mat)){
+        print(paste('The element at row:',row,'and col:',col,'is',mat[row,col]))
+    }
+}
+
+Function in R
+Formally, a function is a useful that groups together a set of statements so they can be run more than once. They can also let us specify parameters that can serve as inputs to the functions.
+On a more fundamental level, functions allow us to not have to repeatedly write the same code again and again. If you remember back to the lessons on strings and lists, remember that we used a function length() to get the length of a string. Since checking the length of a sequence is a common task you would want to write a function that can do this repeatedly at command. Functions will be one of most basic levels of reusing code in R, and it will also allow us to start thinking about program design.
+We already have seen built-in functions and we can use the help function to discover the arguments that the functions take in.
+
+	Example 1
+# Simple function, no inputs!
+> hello <- function(){
+    print('hello!')
+}
+> hello()
+[1] "hello!"
+
+	Example 2
+> helloyou <- function(name){
+    print(paste('hello ',name))
+}
+> helloyou('Sammy')
+[1] "hello  Sammy"
+
+	Example 3
+> add_num <- function(num1,num2){
+    print(num1+num2)
+}
+> add_num(5,10)
+[1] 15
+
+5.	Data Input and Output with R
+	 Importing external data (CSV, Text etc.)
+	
+	Importing from CSV:
+	The basic format of a csv file is the first line indicating the column names and the rest of the rows/lines being data points separated by commas. One of the most basic ways to read in csv files in R is to use read.csv() which is built-in to R.
+	When using read.csv() you'll need to either pass in the entire path of the file or have the file be in the same directory as your R script.
+
+				# Pass in the entire file path if not in same directory
+				> x <- read.csv('example.csv')
+				
+				> df <- data.frame(x)
+
+	Importing from Excel:
+R has the ability to read and write to excel, which makes it very convenient to work on the same datasets as business analysts or colleagues who only know excel, meaning they can work with excel and hand you the files, then you work with them in R!
+To do this, we need the readxl package for R. Remember you can download it by using:
+install.packages('readxl')
+
+			# In case you don't have readxl (you may not need to specify repos)
+			> install.packages('readxl',repos="http://cran.rstudio.com/")
+
+			# Load the readxl package
+			> library(readxl)
+		# list the sheets of the excel file
+			> excel_sheets('Sample-Sales-Data.xlsx')
+			# Call info from the sheets using read_excel
+			> df <- read_excel('Sample-Sales-Data.xlsx',sheet='Sheet1')
+			> head(df)
+		Now you can perform operations on it just like a normal R data frame:
+
+			> sum(df['Value'])
+
+	Importing from Text file:
+	If you have a .txt or a tab-delimited text file, you can easily import it with the basic R function read.table().
+	
+			> df <- read.table("test.txt", header = FALSE)
+
+
+	Using fread
+		fread() is similar to read.table but faster and more convenient:
+
+				> fread('example.csv')
+
+	Exporting data to files
+	
+	Writing to CSV:
+	You can output your files to csv by using write.csv:
+				
+				# Alternatively
+				> write.csv(df, file = "new.csv")
+
+	Writing to Excel:
+
+		Writing to excel requires the xlsx package:
+				> install.packages('xlsx',repos="http://cran.rstudio.com/")
+				> library(xlsx)
+
+				> df <- data.frame(matrix(1:10))
+				> write.xlsx(df, "output.xlsx")
+				> read_excel('output.xlsx')
+
+	Writing to Text:
+
+				> write.table(mydata, "c:/mydata.txt", sep="\t")
+
+
+
+
+
+ Filtering / sub setting data
+
+	R has powerful indexing features for accessing object elements. These features can be used to select and exclude variables and observations. The following code snippets demonstrate ways to keep or delete variables and observations.
+
+	Selecting Variables:
+
+				> c1 <- 1:10
+				> c2 <- c1[1,1:3]
+				> c2 <- c1[1:3]
+				> c2
+				[1] 1 2 3
+	Excluding or Dropping variable:
+
+				> c3 <- c1[c(-2,-3)]
+				> c3
+				[1]  1  4  5  6  7  8  9 10 
+
+	Selection using the Subset Function:
+
+				> newdata <- subset(df, subset = height > 70)
+				> newdata
+   height weight
+14     71    159
+15     72    16
+
+Sorting data
+
+			# sorting examples using the mtcars dataset
+			> attach(mtcars)
+
+# sort by mpg
+> newdata <- mtcars[order(mpg),] 
+
+# sort by mpg and cyl
+> newdata <- mtcars[order(mpg, cyl),]
+
+#sort by mpg (ascending) and cyl (descending)
+> newdata <- mtcars[order(mpg, -cyl),] 
+
+	 Data Manipulation & data wrangling
+	 
+Using dplyr
+
+We'll be covering the following functions:
+
+filter() (and slice())
+arrange()
+select() (and rename())
+distinct()
+mutate() (and transmute())
+summarise()
+sample_n() and sample_frac()
+
+Installing
+					
+You can install dplyr using
+> install.packages('dplyr')
+# Run it using
+> library(dplyr)
+
+Example Data
+Let's use some flight data for our examples. We'll download the nycflights13 data package:
+
+> install.packages('nycflights13',repos = 'http://cran.us.r-project.org')
+> library(nycflights13)
+filter()
+filter() allows you to select a subset of rows in a data frame. The first argument is the name of the data frame. The second and subsequent arguments are the expressions that filter the data frame:
+For example, we can select all flights on November 3rd that were from American Airlines (AA) with:
+
+		> head(filter(flights, month==11,day==3,carrier=='AA'))
+
+slice()
+We can select rows by position using slice()
+		> slice(flights, 1:10)
+
+arrange()
+	arrange() works similarly to filter() except that instead of filtering or selecting rows, it reorders them. It takes a data frame, and a set of column names (or more complicated expressions) to order by. If you provide more than one column name, each additional column will be used to break ties in the values of preceding columns:
+
+			> head(arrange(flights,year,month,day,air_time))
+
+You can add desc() to arrange in descending order:
+			> head(arrange(flights,desc(dep_delay)))
+
+select()
+
+Often you work with large datasets with many columns but only a few are actually of interest to you. select() allows you to rapidly zoom in on a useful subset using operations that usually only work on numeric variable positions:
+
+			> head(select(flights,carrier))
+
+rename()
+	You can use rename() to rename columns, note this is not "in-place" you'll need to reassign the renamed data structures.
+
+			> head(rename(flights,airline_car = carrier))
+
+
+
+
+distinct()
+A common use of select() is to find the values of a set of variables. This is particularly useful in conjunction with the distinct() verb which only returns the unique values in a table.
+
+			> distinct(select(flights,carrier))
+
+mutate()
+Besides selecting sets of existing columns, it’s often useful to add new columns that are functions of existing columns. This is the job of mutate():
+
+			> head(mutate(flights, new_col = arr_delay-dep_delay))
+
+transmute()
+Use transmute if you only want the new columns:
+
+			> head(transmute(flights, new_col = arr_delay-dep_delay))
+
+summarise()
+You can use summarise() to quickly collapse data frames into single rows using functions that aggregate results. Remember to use na.rm=TRUE to remove NA values.
+
+			> summarise(flights,avg_air_time=mean(air_time,na.rm=TRUE))
+
+sample_n() and sample_frac()
+You can use sample_n() and sample_frac() to take a random sample of rows: use sample_n() for a fixed number and sample_frac() for a fixed fraction.
+
+			> sample_n(flights,10)
+			# .005% of the data
+			> sample_frac(flights,0.00005) # USE replace=TRUE for bootstrap sampling
